@@ -8,7 +8,7 @@ RUN mvn clean package -Pprod -DskipTests
 #
 # Package stage
 #
-FROM openjdk:11-jdk-slim
+FROM eclipse-temurin:11-jdk-jammy
 COPY --from=build /target/InterBankingAPI-0.0.1-SNAPSHOT.jar interbankingApi.jar
 
 # Copy the certificate file (assuming it's named interbanking.crt)
